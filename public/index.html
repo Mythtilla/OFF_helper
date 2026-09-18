@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+<title>OFF — Open Freedom Forum</title>
+<meta name="description" content="OFF is an independent community and communication platform being built by one person. It isn't open yet — this site tells you what exists, what's being built, and what's still just an idea." />
+<meta name="theme-color" content="#0b0b0d" />
+<meta name="color-scheme" content="dark light" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="OFF — Open Freedom Forum" />
+<meta property="og:title" content="OFF — Open Freedom Forum" />
+<meta property="og:description" content="A place to find people and a place to know them. Being built in the open, one feature at a time. Not open yet." />
+
+<!-- X / Twitter -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="OFF — Open Freedom Forum" />
+<meta name="twitter:description" content="A place to find people and a place to know them. Being built in the open, one feature at a time. Not open yet." />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='6' fill='%230b0b0d'/><rect x='5' y='8' width='14' height='8' rx='3' fill='none' stroke='%23e8b04b' stroke-width='1.6'/><circle cx='12' cy='24' r='0'/><path d='M8 12h8' stroke='%23e8b04b' stroke-width='1.6' stroke-linecap='round'/></svg>" />
+
+<link rel="stylesheet" href="style.css" />
+
+<!-- Set theme before first paint to avoid a flash -->
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('off-theme');
+      if (saved === 'light' || saved === 'dark') {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+    } catch (e) {}
+  })();
+</script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+
+    <a class="brand" href="#top" aria-label="OFF — back to top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" focusable="false">
+          <rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="1.7"/>
+          <circle cx="12" cy="12" r="3" fill="currentColor"/>
+          <path d="M12 9v6M9 12h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <strong>OFF</strong>
+        <em>Open Freedom Forum</em>
+      </span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="#what">What</a></li>
+        <li><a class="nav-link" href="#story">Story</a></li>
+        <li><a class="nav-link" href="#status">Status</a></li>
+        <li><a class="nav-link" href="#road">Road</a></li>
+        <li><a class="nav-link" href="#privacy">Privacy</a></li>
+        <li><a class="nav-link" href="#get-involved">Get involved</a></li>
+        <li><a class="nav-link" href="#help">Help</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4.2" />
+          <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2Z"/>
+        </svg>
+      </button>
+
+      <button class="icon-btn nav-toggle" id="nav-toggle" type="button"
+              aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="nav-toggle-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile navigation panel -->
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <nav aria-label="Mobile">
+      <ul class="mobile-nav-list">
+        <li><a href="#what">What is OFF</a></li>
+        <li><a href="#why">Why OFF exists</a></li>
+        <li><a href="#story">The story</a></li>
+        <li><a href="#beliefs">What OFF believes</a></li>
+        <li><a href="#world">The World of OFF</a></li>
+        <li><a href="#status">What exists now</a></li>
+        <li><a href="#road">The road ahead</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#get-involved">Get involved</a></li>
+        <li><a href="#help">Help</a></li>
+        <li><a href="#follow">Follow</a></li>
+        <li><a href="#support">Support</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================================================
+       01 — MASTHEAD
+       ============================================================ -->
+  <section class="masthead" id="top" aria-labelledby="masthead-title">
+    <div class="container">
+      <p class="eyebrow">
+        <span class="dot" aria-hidden="true"></span>
+        Independent project&hairsp;·&hairsp;in development
+      </p>
+
+      <h1 class="masthead-title serif" id="masthead-title">
+        A place to be<br />
+        your real self.
+      </h1>
+
+      <p class="masthead-sub">
+        OFF is an independent community and communication platform — a place where you can talk
+        openly, stay anonymous, and only share what you choose to share. Right now it's being built,
+        one feature at a time, by one person.
+      </p>
+
+      <div class="masthead-meta">
+        <span class="status-pip" aria-hidden="true"></span>
+        Not open yet
+        <span class="meta-sep" aria-hidden="true"></span>
+        accounts + World chat + profiles work today
+      </div>
+
+      <p class="masthead-note">
+        The internet shouldn't decide who you are. OFF is exploring a corner where you do.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       02 — WHAT IS OFF
+       ============================================================ -->
+  <section class="section" id="what" aria-labelledby="what-title">
+    <div class="container">
+      <p class="section-label serif">01&#8201;—&#8201;What is OFF</p>
+      <h2 class="section-title" id="what-title">Two halves, one place.</h2>
+
+      <div class="split-hero">
+        <div class="split-prose prose reveal">
+          <p>
+            <strong>OFF stands for Open Freedom Forum.</strong> It's a platform being built so people can
+            gather around things they care about — and step aside into private conversation whenever they want.
+          </p>
+          <p>
+            It isn't a feed you scroll forever. It isn't a wall of other people's highlights. It's one platform
+            with two clear sides, and you decide which one you're in at any moment.
+          </p>
+
+          <ul class="check-list">
+            <li>talk openly with other people</li>
+            <li>create and join communities</li>
+            <li>find people who share your interests</li>
+            <li>have private conversations</li>
+            <li>appear anonymously, on your own terms</li>
+            <li>customise how the whole thing looks and feels</li>
+          </ul>
+
+          <p class="muted small split-foot">
+            The two halves are connected on purpose. Communities are where you find people.
+            Private conversation is where you get to know them.
+          </p>
+        </div>
+
+        <div class="split-art reveal" aria-hidden="true">
+          <svg viewBox="0 0 420 320" fill="none" class="motif motif-forum">
+            <circle cx="210" cy="150" r="104" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M210 46a104 104 0 0 0-30 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="168" cy="108" r="18" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="168" cy="108" r="4" fill="currentColor"/>
+            <circle cx="258" cy="196" r="18" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="258" cy="196" r="4" fill="currentColor"/>
+            <path d="M184 118c20 14 38 26 60 62" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M274 202l14 10M296 218c-6 6-10 14-10 24l-2 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="108" cy="196" r="6" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="300" cy="150" r="6" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <p class="split-art-caption muted small">Open space for everyone. <span class="accent-text">You</span> choose the exits.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       03 — WHY OFF EXISTS
+       ============================================================ -->
+  <section class="section section-alt" id="why" aria-labelledby="why-title">
+    <div class="container">
+      <p class="section-label serif">02&#8201;—&#8201;Why OFF exists</p>
+      <h2 class="section-title" id="why-title">The internet changed how we talk. Then it changed <em>why</em>.</h2>
+
+      <div class="why-grid">
+        <div class="prose reveal">
+          <p>
+            Use the big platforms for a while and the pattern becomes hard to ignore. Conversation becomes the
+            raw material that keeps a feed alive. Every detail you give up — your number, your email, your
+            location — makes you easier to find, track, and target. Not by a conspiracy. By the way the model
+            grew.
+          </p>
+          <p>
+            And when being public gets uncomfortable, there's no real exit. DMs lose their protection.
+            Blocking is buried. Leaving costs more than staying.
+          </p>
+        </div>
+
+        <div class="prose reveal">
+          <blockquote class="pull-quote">
+            OFF is an experiment in building a calmer, more privacy-conscious corner of the internet — where
+            talking to people is the point, not the byproduct.
+          </blockquote>
+          <p>
+            Not a replacement for the internet. Not a fix for everything wrong with it. Just a corner of it,
+            built deliberately, by someone who uses the internet a lot and wanted somewhere different to exist.
+          </p>
+          <p class="muted small">
+            Some of OFF works today. Some of it is still being figured out. This site tries to be honest about
+            which is which.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       04 — THE STORY
+       ============================================================ -->
+  <section class="section" id="story" aria-labelledby="story-title">
+    <div class="container">
+      <p class="section-label serif">03&#8201;—&#8201;The story</p>
+      <h2 class="section-title" id="story-title">One person, one idea, no shortcuts.</h2>
+      <p class="section-lead">
+        This is how OFF actually started, written in the first person — because it belongs to one person.
+      </p>
+
+      <ol class="story-timeline" id="story-timeline">
+        <!-- rendered by script.js -->
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       05 — WHAT OFF BELIEVES
+       ============================================================ -->
+  <section class="section section-alt" id="beliefs" aria-labelledby="beliefs-title">
+    <div class="container">
+      <p class="section-label serif">04&#8201;—&#8201;What OFF believes</p>
+      <h2 class="section-title" id="beliefs-title">Principles before features.</h2>
+      <p class="section-lead">
+        If a feature ever conflicts with one of these, the feature changes.
+      </p>
+
+      <ol class="belief-list" id="belief-list">
+        <!-- rendered by script.js -->
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       06 — THE WORLD OF OFF
+       ============================================================ -->
+  <section class="section" id="world" aria-labelledby="world-title">
+    <div class="container">
+      <p class="section-label serif">05&#8201;—&#8201;The World of OFF</p>
+      <h2 class="section-title" id="world-title">A place to find people.<br />A place to know them.</h2>
+
+      <div class="world-grid">
+        <div class="prose reveal">
+          <p>
+            The <strong>World</strong> is the open side of OFF — one big public space where anyone can talk.
+            As it grows, the World opens into smaller rooms: chats for your country, chats for your language,
+            and group chats you can create and share with anyone.
+          </p>
+          <p>
+            When you want to actually know someone, you add them as a friend and step into a private
+            conversation — just the two of you.
+          </p>
+        </div>
+
+        <ol class="world-flow" id="world-flow">
+          <!-- rendered by script.js -->
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       07 — WHAT EXISTS NOW (STATUS)
+       ============================================================ -->
+  <section class="section section-alt" id="status" aria-labelledby="status-title">
+    <div class="container">
+      <p class="section-label serif">06&#8201;—&#8201;What exists now</p>
+      <h2 class="section-title" id="status-title">Built, building, planned, exploring.</h2>
+      <p class="section-lead">
+        Nothing marked as planned or exploring is claimed as working today. Honest labels — nothing else.
+      </p>
+
+      <div class="status-legend" aria-label="Status legend">
+        <span class="legend-item"><i class="lg-dot lg-live"></i>LIVE — works today</span>
+        <span class="legend-item"><i class="lg-dot lg-building"></i>BUILDING — in progress now</span>
+        <span class="legend-item"><i class="lg-dot lg-planned"></i>PLANNED — intended</span>
+        <span class="legend-item"><i class="lg-dot lg-exploring"></i>EXPLORING — just an idea</span>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="Filter features by status">
+        <button class="chip is-active" type="button" data-feature-filter="all">All</button>
+        <button class="chip" type="button" data-feature-filter="live">Live</button>
+        <button class="chip" type="button" data-feature-filter="building">Building</button>
+        <button class="chip" type="button" data-feature-filter="planned">Planned</button>
+        <button class="chip" type="button" data-feature-filter="exploring">Exploring</button>
+      </div>
+
+      <div class="status-board" id="status-board">
+        <!-- rendered by script.js -->
+      </div>
+
+      <p class="empty-state" id="status-empty" hidden>Nothing with this status yet.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       08 — THE ROAD AHEAD
+       ============================================================ -->
+  <section class="section" id="road" aria-labelledby="road-title">
+    <div class="container">
+      <p class="section-label serif">07&#8201;—&#8201;The road ahead</p>
+      <h2 class="section-title" id="road-title">Where this is going. No fake dates.</h2>
+      <p class="section-lead">
+        Statuses, not deadlines. Things move when they're ready — the first public release is the next step.
+      </p>
+
+      <div class="roadmap" id="roadmap">
+        <!-- rendered by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       09 — PRIVACY
+       ============================================================ -->
+  <section class="section section-alt" id="privacy" aria-labelledby="privacy-title">
+    <div class="container">
+      <p class="section-label serif">08&#8201;—&#8201;Privacy</p>
+      <h2 class="section-title" id="privacy-title">Privacy is architecture, not a slogan.</h2>
+
+      <blockquote class="statement reveal">
+        <span class="serif">"</span>People should be able to share what they really think — without being
+        found, tracked, or bullied for it.<span class="serif">"</span>
+      </blockquote>
+
+      <div class="two-col">
+        <div class="prose reveal">
+          <h3 class="h3">What that means in practice</h3>
+          <ul class="check-list">
+            <li>choose to appear anonymously</li>
+            <li>collect as little data as practically possible</li>
+            <li>no unnecessary tracking</li>
+            <li>meaningful privacy settings, not decorative ones</li>
+            <li>user control over account, conversations and presence</li>
+            <li>security claims based on implementation — never marketing</li>
+          </ul>
+        </div>
+
+        <div class="privacy-honest reveal">
+          <h3 class="h3">The honest version</h3>
+          <p>
+            OFF's goal is a place where you <strong>can't be tracked</strong> and your conversations
+            <strong>stay private</strong>. That is the point of the project.
+          </p>
+          <p class="muted">
+            But it isn't fully true yet. Real end-to-end encryption is future work. Until it's built and
+            properly verified, OFF must not be compared to mature encrypted messengers — and it won't be.
+          </p>
+          <p class="muted small">
+            Privacy is a design goal. Claims follow implementation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       10 — OFF AND THE BIG PLATFORMS
+       ============================================================ -->
+  <section class="section" id="compare" aria-labelledby="compare-title">
+    <div class="container">
+      <p class="section-label serif">09&#8201;—&#8201;OFF and the big platforms</p>
+      <h2 class="section-title" id="compare-title">Different models, not a scoreboard.</h2>
+      <p class="section-lead">
+        This compares <em>ways of building</em>, not companies. No one model is universally right — they were
+        built for different things.
+      </p>
+
+      <div class="table-scroll" role="region" aria-label="Comparison table" tabindex="0">
+        <table class="compare-table" id="compare-table">
+          <!-- rendered by script.js -->
+        </table>
+      </div>
+
+      <p class="table-hint muted">Scroll the table sideways on smaller screens.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       11 — CHANGELOG
+       ============================================================ -->
+  <section class="section section-alt" id="changelog" aria-labelledby="changelog-title">
+    <div class="container container-narrow">
+      <p class="section-label serif">10&#8201;—&#8201;What's been built</p>
+      <h2 class="section-title" id="changelog-title">A changelog, not a press release.</h2>
+      <p class="section-lead">Only what actually happened. No invented versions, no fake dates.</p>
+
+      <ol class="changelog" id="changelog">
+        <!-- rendered by script.js -->
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       12 — GET INVOLVED
+       ============================================================ -->
+  <section class="section" id="get-involved" aria-labelledby="getinvolved-title">
+    <div class="container">
+      <p class="section-label serif">11&#8201;—&#8201;Get involved</p>
+      <h2 class="section-title" id="getinvolved-title">The build runs on feedback.</h2>
+      <p class="section-lead">
+        One genuine message shapes this project more than any roadmap written in private. If you want to be
+        among the first people to test OFF, or want to help build it — say so.
+      </p>
+
+      <div class="form-grid">
+        <!-- EMAIL ME -->
+        <form class="form-card reveal" id="form-message" novalidate>
+          <h3 class="h3">Send a message</h3>
+          <p class="form-intro muted">Ideas, questions, bugs, opinions — it all lands in Bhaskar's inbox.</p>
+
+          <div class="field">
+            <label for="msg-name">Your name <span class="opt">(optional)</span></label>
+            <input id="msg-name" name="name" type="text" autocomplete="name" maxlength="120" />
+            <p class="field-hint" id="msg-name-hint"></p>
+          </div>
+
+          <div class="field">
+            <label for="msg-email">Your email <span class="opt">(for a reply)</span></label>
+            <input id="msg-email" name="email" type="email" autocomplete="email" maxlength="200" />
+            <p class="field-hint" id="msg-email-hint"></p>
+          </div>
+
+          <div class="field">
+            <label for="msg-body">Message</label>
+            <textarea id="msg-body" name="message" rows="5" autocomplete="off" maxlength="4000" required></textarea>
+            <p class="field-hint" id="msg-body-hint"></p>
+          </div>
+
+          <input type="hidden" name="_subject" value="OFF — message from website" />
+          <button class="btn btn-primary" type="submit">Send message</button>
+          <p class="form-status" id="form-message-status" role="status" aria-live="polite" hidden></p>
+          <p class="form-note muted small">
+            Sent through a plain relay so it reaches a real inbox. Nothing here is stored by this site.
+          </p>
+        </form>
+
+        <!-- BE ONE OF THE FIRST / HELP BUILD -->
+        <form class="form-card reveal" id="form-getinvolved" novalidate>
+          <h3 class="h3">Be one of the first</h3>
+          <p class="form-intro muted">Want early access when OFF opens, or want to help build it? Pick a lane.</p>
+
+          <div class="field">
+            <label for="gv-name">Your name</label>
+            <input id="gv-name" name="name" type="text" autocomplete="name" maxlength="120" required />
+            <p class="field-hint" id="gv-name-hint"></p>
+          </div>
+
+          <div class="field">
+            <label for="gv-email">Your email</label>
+            <input id="gv-email" name="email" type="email" autocomplete="email" maxlength="200" required />
+            <p class="field-hint" id="gv-email-hint"></p>
+          </div>
+
+          <div class="field">
+            <label for="gv-interest">I want to</label>
+            <select id="gv-interest" name="interest" required>
+              <option value="" selected disabled>Choose&hellip;</option>
+              <option value="test">Test OFF early</option>
+              <option value="build">Help build OFF</option>
+              <option value="suggest">Suggest an idea</option>
+              <option value="other">Something else</option>
+            </select>
+            <p class="field-hint" id="gv-interest-hint"></p>
+          </div>
+
+          <div class="field">
+            <label for="gv-note">Anything else</label>
+            <textarea id="gv-note" name="message" rows="4" autocomplete="off" maxlength="2000"></textarea>
+            <p class="field-hint" id="gv-note-hint"></p>
+          </div>
+
+          <input type="hidden" name="_subject" value="OFF — join the first people" />
+          <button class="btn btn-primary" type="submit">Register interest</button>
+          <p class="form-status" id="form-getinvolved-status" role="status" aria-live="polite" hidden></p>
+          <p class="form-note muted small">
+            No lists are sold, no tracking attached. First door in gets a real answer.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       13 — HELP / FAQ
+       ============================================================ -->
+  <section class="section section-alt" id="help" aria-labelledby="help-title">
+    <div class="container container-narrow">
+      <p class="section-label serif">12&#8201;—&#8201;Help</p>
+      <h2 class="section-title" id="help-title">Questions people actually ask.</h2>
+      <p class="section-lead">
+        Answers marked <em>current</em> describe what exists now. Marks like <em>planned</em> describe
+        intent — not reality.
+      </p>
+
+      <div class="faq-list" id="faq-list">
+        <!-- rendered by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       14 — FOLLOW
+       ============================================================ -->
+  <section class="section" id="follow" aria-labelledby="follow-title">
+    <div class="container">
+      <p class="section-label serif">13&#8201;—&#8201;Follow the build</p>
+      <h2 class="section-title" id="follow-title">OFF is built in public.</h2>
+      <p class="section-lead">Progress, screenshots and small updates land on Instagram first.</p>
+
+      <div class="follow-grid" id="follow-grid">
+        <!-- rendered by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       15 — SUPPORT
+       ============================================================ -->
+  <section class="section section-alt" id="support" aria-labelledby="support-title">
+    <div class="container">
+      <p class="section-label serif">14&#8201;—&#8201;Support</p>
+      <h2 class="section-title" id="support-title">Help keep OFF moving.</h2>
+      <p class="section-lead">
+        Building alone on free tools is possible — but support makes the pace human. It's entirely optional.
+      </p>
+
+      <div class="support-grid">
+        <article class="card support-card reveal">
+          <h3 class="h3">UPI</h3>
+          <p class="muted small">Copy the ID, or tap the QR to enlarge it.</p>
+
+          <div class="upi-row">
+            <code class="upi-id" id="upi-id">7088411468@fam</code>
+            <button class="btn btn-primary btn-sm" id="copy-upi" type="button">Copy UPI ID</button>
+          </div>
+
+          <p class="muted small">
+            OFF will stay understandable and usable whether or not anyone donates. No paywalls, no guilt.
+          </p>
+          <p class="muted small">
+            Honest words: feedback and bug reports are worth more than money at this stage.
+          </p>
+        </article>
+
+        <article class="card support-card qr-card reveal">
+          <h3 class="h3">UPI QR</h3>
+          <button class="qr-button" id="qr-open" type="button" aria-label="Enlarge QR code">
+            <img id="qr-thumb" src="off-upi-qr.jpg" alt="UPI QR code for supporting OFF" loading="lazy" decoding="async" />
+          </button>
+          <p class="muted small">Tap the QR to enlarge it.</p>
+        </article>
+      </div>
+
+      <div class="support-without reveal">
+        <h3 class="h3">You don't have to donate.</h3>
+        <ul class="pill-list">
+          <li>share OFF</li>
+          <li>report bugs</li>
+          <li>give feedback</li>
+          <li>suggest ideas</li>
+          <li>test features</li>
+          <li>tell others about the project</li>
+        </ul>
+        <p class="muted">
+          Knowing what's confusing, what's broken and what's missing shapes the build more than anything else.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+
+    <div class="footer-brand">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" focusable="false">
+            <rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="1.7"/>
+            <circle cx="12" cy="12" r="3" fill="currentColor"/>
+            <path d="M12 9v6M9 12h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>OFF</strong>
+          <em>Open Freedom Forum</em>
+        </span>
+      </a>
+      <p class="footer-tagline">A place to be your real self.</p>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer">
+      <div class="footer-col">
+        <h4>Project</h4>
+        <ul>
+          <li><a data-link="github" href="https://github.com/Mythtilla/OFF_helper" rel="noopener">GitHub</a></li>
+          <li><a data-link="instagram" href="https://www.instagram.com/off_pvy/" rel="noopener">Instagram</a></li>
+          <li><a data-link="contact" href="https://ig.me/m/off_pvy" rel="noopener">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Builder</h4>
+        <ul>
+          <li><a data-link="personalInstagram" href="https://www.instagram.com/bhaskarr_dgaf/" rel="noopener">Personal</a></li>
+          <li><a href="#get-involved">Get involved</a></li>
+          <li><a href="#support">Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>On this page</h4>
+        <ul>
+          <li><a href="#what">What is OFF</a></li>
+          <li><a href="#status">What exists now</a></li>
+          <li><a href="#road">The road ahead</a></li>
+          <li><a href="#help">Help</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© <span id="year">2025</span> OFF — Open Freedom Forum. Built independently.</p>
+    <p class="muted small">No trackers on this page. No fake statistics. Just the project.</p>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" hidden>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
+</button>
+
+<!-- QR lightbox -->
+<div class="modal" id="qr-modal" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="qr-modal-title">
+    <div class="modal-head">
+      <h3 id="qr-modal-title">Support OFF via UPI</h3>
+      <button class="icon-btn" type="button" data-modal-close aria-label="Close">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <img id="qr-large" src="off-upi-qr.jpg" alt="UPI QR code for supporting OFF" decoding="async" />
+    <p class="modal-upi"><code id="qr-modal-upi">7088411468@fam</code></p>
+    <button class="btn btn-primary btn-sm" id="copy-upi-modal" type="button">Copy UPI ID</button>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+
+<script src="script.js"></script>
+</body>
+</html>

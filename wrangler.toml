@@ -1,0 +1,7 @@
+# Cloudflare Workers — static site deployment for OFF
+name = "off"
+compatibility_date = "2024-11-01"
+
+[assets]
+directory = "./public"
+not_found_handling = "single-page-application"
