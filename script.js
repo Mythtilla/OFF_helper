@@ -10,22 +10,21 @@
      4.  Navigation
      5.  Links
      6.  Story
-     7.  Mindset
-     8.  Comparison
-     9.  Features + filters
-     10. Flow
-     11. Problems
-     12. Ideas
-     13. Changelog
-     14. Roadmap + filters
-     15. FAQ
-     16. Donation / UPI
-     17. Modal
-     18. Toast
-     19. Reveal on scroll
-     20. Active nav + header
-     21. Back to top
-     22. Init
+     7.  Beliefs
+     8.  World flow
+     9.  Status board + filters
+     10. Roadmap
+     11. Comparison table
+     12. Changelog
+     13. Forms
+     14. FAQ
+     15. Donation / UPI
+     16. Modal
+     17. Toast
+     18. Reveal on scroll
+     19. Active nav + header
+     20. Back to top
+     21. Init
    ========================================================================= */
 
 'use strict';
@@ -37,455 +36,270 @@
 const OFF_CONFIG = {
   name:        'OFF',
   fullName:    'Open Freedom Forum',
-  tagline:     'Private conversations. Open communities.',
+  tagline:     'A place to be your real self.',
+
+  /* --- App ----------------------------------------------------------- */
+  appUrl: 'https://off_helper.testingver.workers.dev',  // where OFF will live (not open yet)
 
   /* --- Support -------------------------------------------------------- */
-  upiId:       '7088411468@fam',
-  qrImage:     'off-upi-qr.jpg',        // ← your real UPI QR image
+  upiId:   '7088411468@fam',
+  qrImage: 'off-upi-qr.jpg',
+
+  /* --- Forms ---------------------------------------------------------- */
+  // FormSubmit.co relay for the "email me" and "get involved" forms.
+  formEndpoint: 'https://formsubmit.co/ajax/bhaskarz01022011@gmail.com',
 
   /* --- Links ---------------------------------------------------------- */
-  appUrl:              'https://off.testingver.workers.dev',
-  instagramUrl:        'https://www.instagram.com/off_pvy/',
-  personalInstagramUrl:'https://www.instagram.com/bhaskarr_dgaf/',
-
-  /* Still open — replace when available. The site treats values that
-     start with "[" as unconfigured, so links stay clickable but show a
-     friendly "not set up yet" toast. */
-  githubUrl:    '[GITHUB URL]',
-  contactUrl:   '[CONTACT URL]',        // suggest: https://ig.me/m/off_pvy
-  privacyUrl:   '[PRIVACY URL]',
-  termsUrl:     '[TERMS URL]'
+  githubUrl:             'https://github.com/Mythtilla/OFF_helper',
+  instagramUrl:          'https://www.instagram.com/off_pvy/',
+  personalInstagramUrl:  'https://www.instagram.com/bhaskarr_dgaf/',
+  contactUrl:            'https://ig.me/m/off_pvy'
 };
 
 /* -------------------------------------------------------------------------
-   MY STORY — replace the bracketed placeholders with your real story.
-   The un-bracketed text describes actual development themes and is safe
-   to keep as-is.
+   MY STORY — real, written in the first person. Edit freely.
    ------------------------------------------------------------------------- */
 const STORY = [
   {
     num: '01',
-    title: 'The idea',
-    body: 'OFF started as a frustration with how modern platforms are put together. Conversation had become raw material for a feed. The idea was simple: build a place where talking to people and finding communities is the point, not the byproduct. [MY STORY — when the idea first landed, and what triggered it.]'
+    title: 'The internet wasn\u2019t safe by default',
+    body: 'I kept noticing the same thing: the apps everyone uses don\u2019t really protect people. Instagram removing DM encryption. Phone numbers, emails, any small personal detail — anything that can be used to find you, track you, or hurt you. It felt wrong. And I kept asking the same question: why isn\u2019t there a place where everyone can just feel safe?'
   },
   {
     num: '02',
-    title: 'Why I started',
-    body: 'The gap between “someone should build this” and “I will build this” is where most ideas quietly die. Crossing it meant accepting that a first version would be rough, incomplete, and honest about both. [WHY I STARTED — your motivation in your own words.]'
+    title: 'So I decided to build it',
+    body: 'There\u2019s a gap between \u201csomeone should build this\u201d and \u201cI will build this\u201d — and most ideas die in that gap. I\u2019m 15, I\u2019m still learning to code, and I don\u2019t have money for fancy tools. So I use what\u2019s free. That was the whole start: an idea, a lot of notes, and trying anyway.'
   },
   {
     num: '03',
-    title: 'Building the first version',
-    body: 'The first build was authentication, a database, and a chat interface that needed to feel right before anything else did. Getting the foundation right mattered more than shipping fast. [WHEN I STARTED — the rough date you began.]'
+    title: 'The first version is small — on purpose',
+    body: 'Right now OFF lets you make an account, step into the World chat, and set up a profile. Just those three things. It\u2019s not much yet, but it\u2019s a real place that exists — and everything else gets built on top of it, one piece at a time.'
   },
   {
     num: '04',
-    title: 'What went wrong',
-    body: 'Parts of the architecture had to be rewritten. Some of the UX was not good enough and had to be redesigned. Security and privacy decisions had to be taken seriously from the beginning instead of bolted on at the end. [WHAT WENT WRONG — your own hard lessons.]'
+    title: 'What\u2019s actually hard',
+    body: 'Honesty: I\u2019m building on free tools and learning as I go. The UI and UX have to feel right or nobody will stay. The system flow has to make sense. I write everything down, work through every screen, and rewrite the parts that aren\u2019t good enough. It\u2019s slow. That\u2019s fine — it\u2019s how things get built properly.'
   },
   {
     num: '05',
-    title: 'What I learned',
-    body: 'Privacy claims have to match implementation. Features ship one at a time. Honest limitations build more trust than confident promises. Feedback from real users beats a roadmap written in private. [WHAT I LEARNED — anything else that stuck.]'
+    title: 'The next few weeks',
+    body: 'Country chats, language chats, group chats, friends, private messages, message requests, blocking, reporting, privacy settings, themes, notifications, mobile fixes, search. When those are in place, OFF opens its doors for the first time.'
   },
   {
     num: '06',
-    title: 'Where OFF is going',
-    body: 'OFF is being built feature by feature, not by marketing. The long-term goal is a platform where communities and private conversation coexist, and where users have real control over how they appear online. [WHERE I WANT OFF TO GO — your long-term vision.]'
+    title: 'Why I keep going',
+    body: 'Because a place where people can drop their masks and say what they actually think — safely, anonymously — should exist. And because building something of my own, from nothing, matters to me. I want people to open OFF and think \u201cwhat the hell is this?\u201d — and then stay.'
   }
 ];
 
 /* -------------------------------------------------------------------------
-   THE OFF MINDSET
+   WHAT OFF BELIEVES
    ------------------------------------------------------------------------- */
-const MINDSET = [
-  {
-    symbol: '◈',
-    title: 'Privacy by default',
-    body: 'Collect less. Respect boundaries. Privacy should be the starting state, not a setting people have to hunt for.'
-  },
-  {
-    symbol: '◉',
-    title: 'People over engagement',
-    body: 'The goal is meaningful interaction, not maximising screen time. No dark patterns designed to keep you scrolling.'
-  },
-  {
-    symbol: '⬡',
-    title: 'Open communities',
-    body: 'Communities should let people gather around interests and ideas freely, without a feed deciding what matters.'
-  },
-  {
-    symbol: '⌘',
-    title: 'User control',
-    body: 'Users should have meaningful control over their account, conversations and preferences — not the illusion of it.'
-  },
-  {
-    symbol: '◎',
-    title: 'Transparency',
-    body: 'Clearly say what exists, what does not exist, and what is still being built. Labels matter more than promises.'
-  },
-  {
-    symbol: '⊘',
-    title: 'No fake promises',
-    body: 'Don’t promise what the architecture cannot prove. Security and privacy claims should follow implementation, not precede it.'
-  },
-  {
-    symbol: '⌬',
-    title: 'Independent building',
-    body: 'OFF is being built independently and evolves through experimentation and feedback — not through a roadmap handed down by a board.'
-  }
+const BELIEFS = [
+  { title: 'Anonymity is the point', body: 'People should be able to share their real thoughts without being found, tracked, or punished for it. Not a setting — the reason OFF exists.' },
+  { title: 'Brutally honest, not hurtful', body: 'An honest community means people can disagree, even sharply. It doesn\u2019t mean cruelty gets a home. Difference and decency can both fit.' },
+  { title: 'People over engagement', body: 'No endless feeds, no scoreboards, no algorithm ranking who matters. The goal is talking to people — not keeping them on a screen.' },
+  { title: 'Collect as little as possible', body: 'The less OFF knows about anyone, the less there is to misuse. Fewer details stored, fewer risks created.' },
+  { title: 'Claims follow implementation', body: 'If OFF can\u2019t prove something yet — like real end-to-end encryption — the site says so. Trust is built by telling the truth.' },
+  { title: 'Built in public, one person at a time', body: 'No board, no marketing team, no launch hype. One person, building carefully, guided by real feedback from real people.' }
 ];
 
 /* -------------------------------------------------------------------------
-   COMPARISON — describes product models, not specific companies.
+   THE WORLD OF OFF — how public and private connect
    ------------------------------------------------------------------------- */
-const COMPARISON_COLUMNS = ['OFF', 'Traditional social platforms', 'Messaging apps', 'Community / forum platforms'];
+const WORLD_FLOW = [
+  { num: '01', title: 'The World', body: 'One open public space where anyone can talk, right from the start.', accent: true },
+  { num: '02', title: 'Country chat', body: 'Rooms for your country — find people close to home.', accent: false },
+  { num: '03', title: 'Language chat', body: 'Rooms in your language — conversation that feels natural.', accent: false },
+  { num: '04', title: 'Group chats', body: 'Create a group around anything and share it with the World.', accent: false },
+  { num: '05', title: 'Friends', body: 'When someone matters, add them as a friend.', accent: false },
+  { num: '06', title: 'Private conversation', body: 'Just the two of you. This is where people actually get to know each other.', accent: true }
+];
 
-const COMPARISON_ROWS = [
+/* -------------------------------------------------------------------------
+   STATUS BOARD — what exists, what\u2019s being built, what\u2019s intended, what\u2019s an idea.
+   status: 'live' | 'building' | 'planned' | 'exploring'
+   ------------------------------------------------------------------------- */
+const STATUS_GROUPS = [
   {
-    label: 'Primary purpose',
-    values: [
-      'Conversation and community',
-      'Discovery and content consumption',
-      'One-to-one and group chat',
-      'Topic-based discussion'
+    title: 'Live today',
+    items: [
+      { name: 'Create an account', desc: 'Sign up and get in.', status: 'live' },
+      { name: 'The World chat', desc: 'Open public conversation, right now.', status: 'live' },
+      { name: 'Profiles', desc: 'Present yourself the way you choose.', status: 'live' }
     ]
   },
   {
-    label: 'Public communities',
-    values: [
-      'Core feature (the World)',
-      'Core feature',
-      'Limited',
-      'Core feature'
+    title: 'Being built right now',
+    items: [
+      { name: 'UI & UX refinement', desc: 'Making OFF feel right, screen by screen.', status: 'building' },
+      { name: 'Private conversations', desc: 'One-to-one messaging between people.', status: 'building' },
+      { name: 'Group chats', desc: 'Rooms for a few people — or many.', status: 'building' },
+      { name: 'Profile settings', desc: 'More control over how you appear.', status: 'building' },
+      { name: 'Mobile experience', desc: 'OFF must work properly on a phone.', status: 'building' }
     ]
   },
   {
-    label: 'Private conversation',
-    values: [
-      'Core feature',
-      'Usually present but secondary',
-      'Core feature',
-      'Often limited or absent'
+    title: 'Planned — intended for and after the first release',
+    items: [
+      { name: 'Country chats', desc: 'Rooms organised by country.', status: 'planned' },
+      { name: 'Language chats', desc: 'Rooms organised by language.', status: 'planned' },
+      { name: 'Friends', desc: 'A deliberate connection, not a follower.', status: 'planned' },
+      { name: 'Message requests', desc: 'A buffer between you and strangers.', status: 'planned' },
+      { name: 'Blocking', desc: 'Ends contact, and ends it properly.', status: 'planned' },
+      { name: 'Reporting', desc: 'A simple way to flag problems.', status: 'planned' },
+      { name: 'Privacy settings', desc: 'Meaningful controls, not decorative ones.', status: 'planned' },
+      { name: 'Themes & appearance', desc: 'Make OFF look how you want it to.', status: 'planned' },
+      { name: 'Notifications', desc: 'Quiet, useful, and on your terms.', status: 'planned' },
+      { name: 'Search', desc: 'Find people and rooms — without an algorithm.', status: 'planned' }
     ]
   },
   {
-    label: 'Community structure',
-    values: [
-      'Interest-based communities',
-      'Pages, groups, feeds',
-      'Group chats',
-      'Boards, categories, threads'
-    ]
-  },
-  {
-    label: 'Discovery',
-    values: [
-      'By interest, not algorithm',
-      'Algorithm-driven',
-      'Contact-based',
-      'Category-based'
-    ]
-  },
-  {
-    label: 'Personalisation',
-    values: [
-      'Appearance, themes, layout',
-      'Algorithm-driven content',
-      'Themes and chat settings',
-      'Themes and board layout'
-    ]
-  },
-  {
-    label: 'Privacy controls',
-    values: [
-      'Built into the design intent',
-      'Varies widely',
-      'Varies widely',
-      'Usually basic'
-    ]
-  },
-  {
-    label: 'Advertising model',
-    values: [
-      'Not the current model',
-      'Commonly ad-supported',
-      'Usually not ad-supported',
-      'Sometimes ad-supported'
-    ]
-  },
-  {
-    label: 'Algorithmic feed',
-    values: [
-      'Not the intent',
-      'Common',
-      'No',
-      'No — chronological by default'
-    ]
-  },
-  {
-    label: 'User control',
-    values: [
-      'A stated principle',
-      'Varies',
-      'Mostly chat-level',
-      'Moderation-level'
-    ]
-  },
-  {
-    label: 'Encryption status',
-    values: [
-      'Deeper cryptographic privacy is planned research — not currently equivalent to mature E2EE messengers',
-      'Varies; often not end-to-end encrypted',
-      'Many offer end-to-end encryption',
-      'Rarely end-to-end encrypted'
-    ]
-  },
-  {
-    label: 'Current maturity',
-    values: [
-      'Early — actively being built',
-      'Mature',
-      'Mature',
-      'Mature'
+    title: 'Exploring — ideas, not promises',
+    items: [
+      { name: 'Real end-to-end encryption', desc: 'Where it\u2019s technically right, properly verified — not before.', status: 'exploring' },
+      { name: 'Reduced data retention', desc: 'Keep even less, hold it for less time.', status: 'exploring' },
+      { name: 'Disappearing messages', desc: 'Conversations that don\u2019t live forever by default.', status: 'exploring' },
+      { name: 'Federated communities', desc: 'Spaces that might run outside a single server.', status: 'exploring' },
+      { name: 'Portable identity', desc: 'An identity not locked to one platform.', status: 'exploring' },
+      { name: 'Open protocol', desc: 'Parts of OFF becoming a documented, open standard.', status: 'exploring' }
     ]
   }
 ];
 
 /* -------------------------------------------------------------------------
-   FEATURES
-   status: 'current' | 'planned' | 'experimental'
-   ------------------------------------------------------------------------- */
-const FEATURES = [
-  /* --- CURRENT ------------------------------------------------------- */
-  { title: 'Private conversations',       status: 'current',      body: 'Direct messaging between people, without a public audience.' },
-  { title: 'Profiles',                    status: 'current',      body: 'A presence you control, instead of a profile assembled by an algorithm.' },
-  { title: 'World conversation',          status: 'current',      body: 'A public space where open conversation happens and communities form.' },
-  { title: 'Message requests',            status: 'current',      body: 'A buffer between you and people you have not chosen to talk to.' },
-  { title: 'Blocking',                    status: 'current',      body: 'Straightforward blocking that actually ends contact.' },
-  { title: 'Privacy settings',            status: 'current',      body: 'Controls over visibility, reachability and account behaviour.' },
-  { title: 'Appearance customisation',    status: 'current',      body: 'Themes and visual options so OFF looks how you want it to.' },
-  { title: 'Account controls',            status: 'current',      body: 'Manage your account, your data and your presence.' },
-  { title: 'Community-oriented talk',     status: 'current',      body: 'Conversations organised around shared interests rather than follower counts.' },
-
-  /* --- PLANNED ------------------------------------------------------- */
-  { title: 'Richer communities',          status: 'planned',      body: 'Deeper structure for communities — roles, rules and organisation.' },
-  { title: 'Channels & topics',           status: 'planned',      body: 'Focused spaces inside communities so discussions stay readable.' },
-  { title: 'Threads',                     status: 'planned',      body: 'Replies that branch instead of collapsing into one long timeline.' },
-  { title: 'Improved moderation',         status: 'planned',      body: 'Better tools for keeping communities healthy without over-policing.' },
-  { title: 'Disappearing messages',       status: 'planned',      body: 'Conversations that do not live forever by default.' },
-  { title: 'Richer media sharing',        status: 'planned',      body: 'Better handling of images, files and rich content in chats.' },
-  { title: 'Better discovery',            status: 'planned',      body: 'Finding communities and people without an engagement algorithm.' },
-  { title: 'Deeper privacy architecture', status: 'planned',      body: 'Less data retained, less metadata generated, stronger defaults.' },
-  { title: 'Stronger cryptographic identity', status: 'planned',  body: 'Identity that is verifiable rather than merely asserted.' },
-  { title: 'Improved multi-device security',  status: 'planned',  body: 'Safer sessions across the devices you actually use.' },
-  { title: 'Real end-to-end encryption',  status: 'planned',      body: 'Where it is technically appropriate and properly verified — not before.' },
-
-  /* --- EXPERIMENTAL / FUTURE ----------------------------------------- */
-  { title: 'Federated or self-hosted communities', status: 'experimental', body: 'Exploring whether communities could run outside a single central server.' },
-  { title: 'Portable identity',           status: 'experimental', body: 'Research into identities that are not locked to one platform.' },
-  { title: 'Metadata-resistant messaging',status: 'experimental', body: 'Long-term research into reducing what a server can learn about a conversation.' },
-  { title: 'Open protocol work',          status: 'experimental', body: 'Whether parts of OFF could become an open, documented protocol.' }
-];
-
-/* -------------------------------------------------------------------------
-   HOW OFF WORKS
-   ------------------------------------------------------------------------- */
-const FLOW = [
-  { title: 'Create account',        body: 'Start with as little information as the platform can reasonably work with.' },
-  { title: 'Build your profile',    body: 'Decide how you appear and how reachable you want to be.' },
-  { title: 'Enter the World',       body: 'Step into the open side of OFF where public conversation happens.' },
-  { title: 'Discover conversations',body: 'Find topics and communities by interest, not by algorithm.' },
-  { title: 'Connect with people',   body: 'Move from public discussion into private conversation.' },
-  { title: 'Create or join communities', body: 'Build a space around something you care about.' },
-  { title: 'Customise your experience',  body: 'Shape how OFF looks and behaves for you.' }
-];
-
-/* -------------------------------------------------------------------------
-   PROBLEM → OFF IDEA
-   ------------------------------------------------------------------------- */
-const PROBLEMS = [
-  {
-    icon: '01',
-    problem: 'Too much noise',
-    current: 'Endless feeds optimised for time-on-screen',
-    idea: 'Focused communities around things you actually chose'
-  },
-  {
-    icon: '02',
-    problem: 'Privacy concerns',
-    current: 'Large amounts of data and platform visibility as the default',
-    idea: 'Privacy-conscious architecture where collecting less is the goal'
-  },
-  {
-    icon: '03',
-    problem: 'Community fragmentation',
-    current: 'Conversations spread across many disconnected places',
-    idea: 'Communities and private communication in one place'
-  },
-  {
-    icon: '04',
-    problem: 'Engagement pressure',
-    current: 'Systems optimised around attention and constant posting',
-    idea: 'Conversations first — no ranking system deciding who matters'
-  },
-  {
-    icon: '05',
-    problem: 'Confusing identity',
-    current: 'Public social profiles required everywhere',
-    idea: 'More controlled identity and connection options'
-  }
-];
-
-/* -------------------------------------------------------------------------
-   IDEAS — "What should the internet feel like?"
-   Replace the bracketed placeholders with your own opinions.
-   ------------------------------------------------------------------------- */
-const IDEAS = [
-  { title: 'Less noise',                body: '[MY IDEA 1] — Write what a calmer internet would look like to you.' },
-  { title: 'More control',              body: '[MY IDEA 2] — What should users actually be able to decide for themselves?' },
-  { title: 'Better communities',        body: '[MY IDEA 3] — What made old forums work, and what should be brought back?' },
-  { title: 'Better privacy',            body: '[MY IDEA 4] — What does meaningful privacy look like in practice, not in marketing?' },
-  { title: 'More meaningful interaction', body: '[YOUR SUGGESTION] — What would make online conversation feel worth having again?' },
-  { title: 'Less algorithmic pressure', body: '[YOUR SUGGESTION] — What would the internet feel like without a ranking system?' }
-];
-
-/* -------------------------------------------------------------------------
-   CHANGELOG — replace with your real updates.
-   Use "in development" / "alpha" / "latest update" when dates/versions
-   are not tracked yet. Do NOT invent releases.
-   ------------------------------------------------------------------------- */
-const UPDATES = [
-  {
-    version: 'alpha',
-    title: 'First working OFF prototype',
-    date: 'In development',
-    latest: false,
-    points: [
-      'First working build of the idea',
-      'Basic account creation',
-      'Early layout experiments'
-    ]
-  },
-  {
-    version: 'alpha',
-    title: 'Authentication rework',
-    date: 'In development',
-    latest: false,
-    points: [
-      'Cleaner sign-in flow',
-      'Better session handling',
-      'Fewer dead ends'
-    ]
-  },
-  {
-    version: 'alpha',
-    title: 'Chat experience improvements',
-    date: 'In development',
-    latest: false,
-    points: [
-      'Faster message loading',
-      'Better message grouping',
-      'Cleaner conversation view'
-    ]
-  },
-  {
-    version: 'alpha',
-    title: 'Privacy controls added',
-    date: 'In development',
-    latest: false,
-    points: [
-      'Visibility settings',
-      'Message requests',
-      'Blocking improvements'
-    ]
-  },
-  {
-    version: 'latest',
-    title: 'Latest update',
-    date: 'In development',
-    latest: true,
-    points: [
-      '[WHAT CHANGED]',
-      '[WHAT WAS FIXED]',
-      '[WHAT IS NEXT]'
-    ]
-  }
-];
-
-/* -------------------------------------------------------------------------
-   ROADMAP
-   status: 'done' | 'progress' | 'planned' | 'research'
+   ROADMAP — statuses, not deadlines.
+   phase status: 'building' | 'planned' | 'exploring'
+   item status:  same set (+ 'done')
    ------------------------------------------------------------------------- */
 const ROADMAP = [
   {
-    phase: 'Phase 1',
-    title: 'Foundation',
-    status: 'done',
+    phase: 'Next up',
+    title: 'First public release',
+    status: 'building',
+    lead: 'Finish the missing pieces, open the doors, and let the first real people in.',
     items: [
-      { text: 'Core architecture',        status: 'done' },
-      { text: 'Accounts & profiles',      status: 'done' },
-      { text: 'Appearance / theming',     status: 'done' },
-      { text: 'Basic privacy settings',   status: 'done' }
+      { text: 'Private conversations', status: 'building' },
+      { text: 'Group chats', status: 'building' },
+      { text: 'Country & language chats', status: 'planned' },
+      { text: 'Friends', status: 'planned' },
+      { text: 'Message requests', status: 'planned' },
+      { text: 'Blocking & reporting', status: 'planned' },
+      { text: 'Privacy settings', status: 'planned' },
+      { text: 'Themes & appearance', status: 'planned' },
+      { text: 'Notifications', status: 'planned' },
+      { text: 'Search', status: 'planned' },
+      { text: 'Mobile polish', status: 'building' }
     ]
   },
   {
-    phase: 'Phase 2',
-    title: 'Messaging',
-    status: 'progress',
+    phase: 'After release',
+    title: 'Grow OFF the right way',
+    status: 'planned',
+    lead: 'Improve what the first real users touch, based on what they actually need.',
     items: [
-      { text: 'Private conversations',    status: 'done' },
-      { text: 'Message requests',         status: 'done' },
-      { text: 'Blocking & reporting',     status: 'progress' },
-      { text: 'Disappearing messages',    status: 'planned' },
-      { text: 'Richer media sharing',     status: 'planned' }
-    ]
-  },
-  {
-    phase: 'Phase 3',
-    title: 'Communities',
-    status: 'progress',
-    items: [
-      { text: 'The World (public space)', status: 'done' },
-      { text: 'Community creation',       status: 'progress' },
-      { text: 'Channels & topics',        status: 'planned' },
-      { text: 'Threads',                  status: 'planned' },
-      { text: 'Community moderation tools', status: 'planned' },
+      { text: 'Feedback-led refinements', status: 'planned' },
+      { text: 'Better community tools', status: 'planned' },
+      { text: 'Richer media sharing', status: 'planned' },
       { text: 'Discovery without algorithms', status: 'planned' }
     ]
   },
   {
-    phase: 'Phase 4',
-    title: 'Privacy + Security',
+    phase: 'Privacy & security',
+    title: 'Make the promise real',
     status: 'planned',
+    lead: 'Privacy is the point of OFF. This is the work that turns the intention into architecture.',
     items: [
-      { text: 'Reduced data retention',   status: 'planned' },
-      { text: 'Stronger cryptographic identity', status: 'research' },
-      { text: 'Improved multi-device security',  status: 'planned' },
-      { text: 'Real end-to-end encryption where appropriate', status: 'research' },
-      { text: 'Independent security review',     status: 'research' }
+      { text: 'Real end-to-end encryption', status: 'exploring' },
+      { text: 'Reduced data retention', status: 'planned' },
+      { text: 'Stronger identity handling', status: 'planned' },
+      { text: 'Multi-device security', status: 'planned' },
+      { text: 'Independent security review', status: 'exploring' }
     ]
   },
   {
-    phase: 'Phase 5',
-    title: 'Advanced Infrastructure',
-    status: 'research',
+    phase: 'Long term',
+    title: 'A corner of the internet that lasts',
+    status: 'exploring',
+    lead: 'Big ideas, honestly marked as ideas. Some may happen, some may not.',
     items: [
-      { text: 'Scalable messaging infrastructure', status: 'planned' },
-      { text: 'Metadata-resistant messaging',      status: 'research' },
-      { text: 'Federated / self-hosted communities', status: 'research' },
-      { text: 'Open protocol documentation',       status: 'research' }
+      { text: 'Federated communities', status: 'exploring' },
+      { text: 'Portable identity', status: 'exploring' },
+      { text: 'Open protocol', status: 'exploring' },
+      { text: 'A model that doesn\u2019t need ads', status: 'exploring' }
+    ]
+  }
+];
+
+/* -------------------------------------------------------------------------
+   COMPARISON — product models, not companies.
+   ------------------------------------------------------------------------- */
+const COMPARISON_COLUMNS = ['OFF', 'Social platforms', 'Messaging apps', 'Community platforms'];
+
+const COMPARISON_ROWS = [
+  {
+    label: 'Primary purpose',
+    values: ['Conversation and community', 'Discovery and content', 'One-to-one and group chat', 'Topic-based discussion']
+  },
+  {
+    label: 'Public spaces',
+    values: ['Core (the World)', 'Core (feeds)', 'Limited', 'Core']
+  },
+  {
+    label: 'Private conversation',
+    values: ['Core', 'Usually secondary', 'Core', 'Often limited']
+  },
+  {
+    label: 'Discovery',
+    values: ['By interest, not algorithm', 'Algorithm-driven', 'Contact-based', 'Category-based']
+  },
+  {
+    label: 'Anonymity',
+    values: ['A stated goal', 'Usually discouraged', 'Depends on the app', 'Often possible']
+  },
+  {
+    label: 'Advertising model',
+    values: ['Not the model', 'Commonly ad-supported', 'Usually not ad-supported', 'Sometimes ad-supported']
+  },
+  {
+    label: 'Algorithmic feed',
+    values: ['Not the intent', 'Common', 'No', 'No \u2014 chronological by default']
+  },
+  {
+    label: 'Encryption status',
+    values: ['Planned research \u2014 not yet equivalent to mature E2EE messengers', 'Often not end-to-end encrypted', 'Many are end-to-end encrypted', 'Rarely end-to-end encrypted']
+  },
+  {
+    label: 'Current maturity',
+    values: ['Early \u2014 being built by one person', 'Mature', 'Mature', 'Mature']
+  }
+];
+
+/* -------------------------------------------------------------------------
+   CHANGELOG — only what actually happened. No invented versions.
+   ------------------------------------------------------------------------- */
+const UPDATES = [
+  {
+    version: 'now',
+    title: 'The build in progress',
+    date: 'In development',
+    latest: true,
+    points: [
+      'UI & UX refinement, in progress',
+      'Private conversations in progress',
+      'Group chats in progress',
+      'Mobile experience fixes in progress'
     ]
   },
   {
-    phase: 'Phase 6',
-    title: 'Long-term OFF vision',
-    status: 'research',
-    items: [
-      { text: 'Portable identity across platforms', status: 'research' },
-      { text: 'A genuinely user-owned social layer', status: 'research' },
-      { text: 'Sustainable, non-advertising funding', status: 'research' },
-      { text: 'A platform that outlives its creator', status: 'research' }
+    version: 'first build',
+    title: 'The starting point',
+    date: 'In development',
+    latest: false,
+    points: [
+      'Account creation works',
+      'The World chat works',
+      'Profiles work'
     ]
   }
 ];
@@ -498,68 +312,86 @@ const FAQS = [
   {
     q: 'What is OFF?',
     tag: null,
-    a: `<p>OFF (Open Freedom Forum) is an independent community and communication platform. It combines open, public communities with private, one-to-one conversation — and is being built with a bias towards user control rather than engagement metrics.</p>`
+    a: '<p>OFF (Open Freedom Forum) is an independent community and communication platform. One open side (the World) for finding people, and a private side for actually knowing them — built with a bias towards anonymity and user control rather than engagement.</p>'
+  },
+  {
+    q: 'Is OFF open yet?',
+    tag: 'current',
+    a: '<p><strong>Not yet.</strong> OFF is still being built and has not been publicly released. This site is honest about that on purpose: the <a href="#status">status board</a> shows exactly what works today, what\u2019s being built right now, and what\u2019s still planned.</p>'
   },
   {
     q: 'Who is building OFF?',
     tag: null,
-    a: `<p>OFF is being built independently by one person. It is not a company product, and there is no team behind it — just an idea that is being turned into software one feature at a time. The <a href="#story">My Story</a> section has the details.</p>`
+    a: '<p>One person — Bhaskar, a 15-year-old builder from India. No company, no team, just an idea being turned into software one feature at a time. See <a href="#story">the story</a> for how it started.</p>'
   },
   {
-    q: 'How do I use OFF?',
+    q: 'What works in OFF right now?',
     tag: 'current',
-    a: `<p>Through the OFF application itself. Use the “Open OFF” button in the header or footer — the current build lives at <a href="https://off.testingver.workers.dev" target="_blank" rel="noopener">off.testingver.workers.dev</a>.</p>`
+    a: '<p>Three things: creating an account, the World chat, and profiles. Everything else on this page is either being built, planned, or still just an idea — and it\u2019s all labelled honestly so nothing gets exaggerated.</p>'
   },
   {
     q: 'What is the World?',
     tag: 'current',
-    a: `<p>The World is the public side of OFF — the open space where conversations are visible and communities form. It is where you find people; private conversation is where you get to know them.</p>`
+    a: '<p>The World is the open side of OFF — one public space where anyone can talk. From there, OFF is planned to open into country chats, language chats and group chats. The World is where you find people; private conversation is where you get to know them.</p>'
   },
   {
-    q: 'How do private conversations work?',
-    tag: 'current',
-    a: `<p>Direct messages are separate from the public World. Message requests act as a buffer between you and people you have not chosen to talk to, and blocking ends contact.</p>
-        <p><strong>Important:</strong> the current implementation should not be described as end-to-end encrypted. See the encryption question below.</p>`
-  },
-  {
-    q: 'Are communities available?',
-    tag: 'current',
-    a: `<p>Community-oriented conversation exists today. Richer community structure — roles, rules, channels, topics and threads — is on the roadmap and clearly marked as <em>planned</em>, not shipped.</p>`
-  },
-  {
-    q: 'Does OFF use end-to-end encryption?',
+    q: 'Is my data private / is OFF encrypted?',
     tag: 'planned',
-    a: `<p><strong>Not yet — and it is important to be honest about this.</strong> Real end-to-end encryption is a planned, long-term development, not a current property of OFF. Until it is implemented and independently verified, OFF should not be compared to mature encrypted messengers.</p>
-        <p>Any future claim about encryption will be backed by implementation, not marketing.</p>`
+    a: '<p><strong>The honest answer: not fully yet.</strong> Privacy and anonymity are the point of OFF, and OFF is being designed around that goal. But real end-to-end encryption is future work, not a current property — until it\u2019s built and independently verified, OFF must not be compared to mature encrypted messengers.</p><p>Any future claim about encryption will be backed by implementation, not marketing.</p>'
+  },
+  {
+    q: 'Can I use OFF anonymously?',
+    tag: 'planned',
+    a: '<p>That\u2019s the goal — appearing on your own terms is a core belief of OFF. The details are still being worked out, and the reality of the current build is simpler than the ambition. It\u2019s marked <em>planned</em> until it\u2019s actually true.</p>'
   },
   {
     q: 'What information does OFF collect?',
     tag: 'current',
-    a: `<p>The guiding principle is to collect as little as practical for the platform to function. The exact data model depends on the current build, and the intention is to keep reducing what is stored rather than expanding it.</p>
-        <p>There are no third-party advertising trackers on this informational website.</p>`
+    a: '<p>The guiding principle is to collect as little as practically possible for the platform to function. And this website itself has no trackers — no analytics, no ad scripts. Just the project.</p>'
   },
   {
-    q: 'Can I delete my account?',
-    tag: 'current',
-    a: `<p>Account controls exist in the current build. If you cannot find what you need, reach out via Instagram DM to <a href="https://www.instagram.com/off_pvy/" target="_blank" rel="noopener">@off_pvy</a> and it will be handled.</p>`
+    q: 'How can I be among the first to try OFF?',
+    tag: null,
+    a: '<p>Use the <a href="#get-involved">get involved</a> section and pick \u201cTest OFF early.\u201d The first people who register are the first people who get in when OFF opens.</p>'
+  },
+  {
+    q: 'How can I help build OFF?',
+    tag: null,
+    a: '<p>Pick \u201cHelp build OFF\u201d in the <a href="#get-involved">get involved</a> section. Honest feedback, bug reports and ideas are worth more than money at this stage — see <a href="#support">support</a>.</p>'
   },
   {
     q: 'How can I report a problem?',
-    tag: 'current',
-    a: `<p>Blocking and reporting tools exist in the app, with improved moderation tooling planned. For anything urgent, an Instagram DM to <a href="https://www.instagram.com/off_pvy/" target="_blank" rel="noopener">@off_pvy</a> reaches a human — because there is only one.</p>`
-  },
-  {
-    q: 'How can I suggest an idea?',
-    tag: null,
-    a: `<p>Send it over on Instagram (<a href="https://www.instagram.com/off_pvy/" target="_blank" rel="noopener">@off_pvy</a>) or wherever you found OFF. Genuine feedback shapes the build more than anything else at this stage.</p>`
+    tag: 'planned',
+    a: '<p>Blocking and reporting tools are planned for the first release. Until then — or if you\u2019ve hit something urgent — a message to the project on Instagram (@off_pvy) reaches a human, because there\u2019s only one.</p>'
   },
   {
     q: 'How can I support OFF?',
     tag: null,
-    a: `<p>You can donate via UPI if you want to — details are in the <a href="#support">Support</a> section. But sharing the project, reporting bugs and giving honest feedback helps just as much, and costs nothing.</p>`
+    a: '<p>Donations via UPI are optional — details in the <a href="#support">support</a> section, no guilt attached. Sharing the project and giving honest feedback helps just as much, and costs nothing.</p>'
   }
 ];
 
+/* -------------------------------------------------------------------------
+   FOLLOW — where the build is shared
+   ------------------------------------------------------------------------- */
+const FOLLOW = [
+  {
+    platform: 'Instagram',
+    handle: '@off_pvy',
+    desc: 'The public face of the build — screenshots, progress notes and announcements.',
+    url: OFF_CONFIG.instagramUrl,
+    label: 'Follow OFF updates',
+    kind: 'primary'
+  },
+  {
+    platform: 'GitHub',
+    handle: 'Mythtilla/OFF_helper',
+    desc: 'This source code, in the open, so the build can be followed commit by commit.',
+    url: OFF_CONFIG.githubUrl,
+    label: 'Watch the repo',
+    kind: 'secondary'
+  }
+];
 
 /* =========================================================================
    2. UTILITIES
@@ -567,19 +399,6 @@ const FAQS = [
 
 const $  = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
-
-function el(tag, className, html, attrs) {
-  const node = document.createElement(tag);
-  if (className) node.className = className;
-  if (html != null) node.innerHTML = html;
-  if (attrs) {
-    Object.keys(attrs).forEach((key) => {
-      if (key === 'text') node.textContent = attrs[key];
-      else node.setAttribute(key, attrs[key]);
-    });
-  }
-  return node;
-}
 
 function esc(str) {
   return String(str)
@@ -592,7 +411,6 @@ function esc(str) {
 const prefersReducedMotion = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-
 /* =========================================================================
    3. THEME
    ========================================================================= */
@@ -601,8 +419,7 @@ const Theme = (() => {
   const STORAGE_KEY = 'off-theme';
   const root = document.documentElement;
   const meta = document.querySelector('meta[name="theme-color"]');
-
-  const COLORS = { dark: '#0a0a0b', light: '#f6f5f2' };
+  const COLORS = { dark: '#0b0b0d', light: '#f7f6f2' };
 
   function apply(theme) {
     root.setAttribute('data-theme', theme);
@@ -616,7 +433,7 @@ const Theme = (() => {
   function set(theme, persist = true) {
     apply(theme);
     if (persist) {
-      try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) { /* ignore */ }
+      try { localStorage.setItem(STORAGE_KEY, theme); } catch (e) {}
     }
   }
 
@@ -626,7 +443,7 @@ const Theme = (() => {
 
   function init() {
     let saved = null;
-    try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) { /* ignore */ }
+    try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
 
     if (saved === 'light' || saved === 'dark') {
       apply(saved);
@@ -647,7 +464,6 @@ const Theme = (() => {
 
   return { init, set, current, toggle };
 })();
-
 
 /* =========================================================================
    4. NAVIGATION
@@ -718,9 +534,8 @@ const Nav = (() => {
   return { init, close };
 })();
 
-
 /* =========================================================================
-   5. LINKS  (inject config URLs into every [data-link] element)
+   5. LINKS
    ========================================================================= */
 
 const Links = (() => {
@@ -729,9 +544,7 @@ const Links = (() => {
     github:            () => OFF_CONFIG.githubUrl,
     instagram:         () => OFF_CONFIG.instagramUrl,
     personalInstagram: () => OFF_CONFIG.personalInstagramUrl,
-    contact:           () => OFF_CONFIG.contactUrl,
-    privacy:           () => OFF_CONFIG.privacyUrl,
-    terms:             () => OFF_CONFIG.termsUrl
+    contact:           () => OFF_CONFIG.contactUrl
   };
 
   function init() {
@@ -743,15 +556,7 @@ const Links = (() => {
       const url = resolver();
       node.setAttribute('href', url);
 
-      const isPlaceholder = !url || url.startsWith('[');
-      if (isPlaceholder) {
-        node.setAttribute('aria-disabled', 'true');
-        node.setAttribute('title', 'Link not configured yet');
-        node.addEventListener('click', (e) => {
-          e.preventDefault();
-          Toast.show('This link is not set up yet.');
-        });
-      } else if (key !== 'app') {
+      if (key !== 'app') {
         node.setAttribute('rel', 'noopener');
         node.setAttribute('target', '_blank');
       }
@@ -761,21 +566,11 @@ const Links = (() => {
   return { init };
 })();
 
-
 /* =========================================================================
    6. STORY
    ========================================================================= */
 
 const Story = (() => {
-  /* Turn [PLACEHOLDER] markers into a styled span so they look intentional
-     rather than broken. Everything inside [brackets] gets the marker. */
-  function decorate(text) {
-    return esc(text).replace(
-      /\[([^\]]+)\]/g,
-      '<span class="story-placeholder">[$1]</span>'
-    );
-  }
-
   function render() {
     const container = $('#story-timeline');
     if (!container) return;
@@ -784,7 +579,7 @@ const Story = (() => {
       <li class="story-item reveal">
         <span class="story-num">${esc(item.num)}</span>
         <h3>${esc(item.title)}</h3>
-        <p>${decorate(item.body)}</p>
+        <p>${esc(item.body)}</p>
       </li>
     `).join('');
   }
@@ -792,31 +587,192 @@ const Story = (() => {
   return { render };
 })();
 
-
 /* =========================================================================
-   7. MINDSET
+   7. BELIEFS
    ========================================================================= */
 
-const Mindset = (() => {
+const Beliefs = (() => {
   function render() {
-    const container = $('#mindset-grid');
+    const container = $('#belief-list');
     if (!container) return;
 
-    container.innerHTML = MINDSET.map((item) => `
-      <article class="mindset-card reveal">
-        <span class="mindset-symbol" aria-hidden="true">${esc(item.symbol)}</span>
+    container.innerHTML = BELIEFS.map((item) => `
+      <li class="belief-item reveal">
         <h3>${esc(item.title)}</h3>
         <p>${esc(item.body)}</p>
-      </article>
+      </li>
     `).join('');
   }
 
   return { render };
 })();
 
+/* =========================================================================
+   8. WORLD FLOW
+   ========================================================================= */
+
+const WorldFlow = (() => {
+  function render() {
+    const list = $('#world-flow');
+    if (!list) return;
+
+    list.innerHTML = WORLD_FLOW.map((step) => `
+      <li class="${step.accent ? 'is-accent' : ''}">
+        <span class="flow-num">${esc(step.num)}</span>
+        <h3>${esc(step.title)}</h3>
+        <p>${esc(step.body)}</p>
+      </li>
+    `).join('');
+  }
+
+  return { render };
+})();
 
 /* =========================================================================
-   8. COMPARISON TABLE
+   8B. FOLLOW
+   ========================================================================= */
+
+const Follow = (() => {
+  function render() {
+    const grid = $('#follow-grid');
+    if (!grid) return;
+
+    grid.innerHTML = FOLLOW.map((item) => `
+      <a class="follow-card${item.kind === 'primary' ? ' is-primary' : ''} reveal" href="${esc(item.url)}"
+         rel="noopener" target="_blank"
+         aria-label="Open ${esc(item.platform)} — ${esc(item.handle)}">
+        <span class="follow-platform">${esc(item.platform)}</span>
+        <span class="follow-handle">${esc(item.handle)}</span>
+        <span class="follow-desc">${esc(item.desc)}</span>
+        <span class="follow-cta">${esc(item.label)}</span>
+      </a>
+    `).join('');
+  }
+
+  return { render };
+})();
+
+/* =========================================================================
+   9. STATUS BOARD + FILTERS
+   ========================================================================= */
+
+const StatusBoard = (() => {
+  const LABELS = {
+    live: 'LIVE',
+    building: 'BUILDING',
+    planned: 'PLANNED',
+    exploring: 'EXPLORING'
+  };
+
+  function render() {
+    const board = $('#status-board');
+    if (!board) return;
+
+    board.innerHTML = STATUS_GROUPS.map((group) => `
+      <section class="status-group reveal" data-group-category="${esc(group.title)}">
+        <div class="status-group-head">
+          <h3>${esc(group.title)}</h3>
+          <span class="status-group-count">${group.items.length}</span>
+        </div>
+        <div class="status-group-items">
+          ${group.items.map((item) => `
+            <div class="status-row" data-status="${esc(item.status)}">
+              <span class="badge badge-${esc(item.status)}">${esc(LABELS[item.status] || item.status)}</span>
+              <span class="status-name">${esc(item.name)}</span>
+              <span class="status-desc">${esc(item.desc)}</span>
+            </div>
+          `).join('')}
+        </div>
+      </section>
+    `).join('');
+  }
+
+  function applyFilter(filter) {
+    const board = $('#status-board');
+    const empty = $('#status-empty');
+    if (!board) return;
+
+    let visible = 0;
+    $$('.status-row', board).forEach((row) => {
+      const match = filter === 'all' || row.dataset.status === filter;
+      row.hidden = !match;
+      if (match) visible++;
+    });
+
+    $$('.status-group', board).forEach((group) => {
+      const hasVisible = $$('.status-row', group).some((row) => !row.hidden);
+      group.hidden = !hasVisible || filter === 'all' ? false : !hasVisible;
+    });
+
+    if (empty) empty.hidden = visible > 0;
+  }
+
+  function init() {
+    render();
+
+    const chips = $$('[data-feature-filter]');
+    if (!chips.length) return;
+
+    chips.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        chips.forEach((b) => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        applyFilter(btn.dataset.featureFilter);
+      });
+    });
+  }
+
+  return { init };
+})();
+
+/* =========================================================================
+   10. ROADMAP
+   ========================================================================= */
+
+const Roadmap = (() => {
+  const LABELS = {
+    done: 'Done',
+    building: 'Building',
+    planned: 'Planned',
+    exploring: 'Exploring'
+  };
+
+  function phaseBadge(status) {
+    return `<span class="badge badge-${esc(status)}">${esc(LABELS[status] || status)}</span>`;
+  }
+
+  function render() {
+    const container = $('#roadmap');
+    if (!container) return;
+
+    container.innerHTML = ROADMAP.map((phase) => `
+      <section class="phase reveal" data-phase="${esc(phase.status)}">
+        <div class="phase-head">
+          <span class="phase-num">${esc(phase.phase)}</span>
+          <h3>${esc(phase.title)}</h3>
+          ${phaseBadge(phase.status)}
+        </div>
+        ${phase.lead ? `<p class="phase-lead">${esc(phase.lead)}</p>` : ''}
+        <ul class="phase-items">
+          ${phase.items.map((item) => `
+            <li class="phase-item" data-status="${esc(item.status)}">
+              <span class="phase-dot" aria-hidden="true"></span>
+              <span class="phase-item-text">
+                ${esc(item.text)}
+                <span class="phase-item-status">${esc(LABELS[item.status] || item.status)}</span>
+              </span>
+            </li>
+          `).join('')}
+        </ul>
+      </section>
+    `).join('');
+  }
+
+  return { render };
+})();
+
+/* =========================================================================
+   11. COMPARISON TABLE
    ========================================================================= */
 
 const Comparison = (() => {
@@ -854,139 +810,8 @@ const Comparison = (() => {
   return { render };
 })();
 
-
 /* =========================================================================
-   9. FEATURES + FILTERS
-   ========================================================================= */
-
-const Features = (() => {
-  const LABELS = {
-    current: 'Current',
-    planned: 'Planned',
-    experimental: 'Experimental / Future'
-  };
-
-  function render() {
-    const grid = $('#feature-grid');
-    if (!grid) return;
-
-    grid.innerHTML = FEATURES.map((f) => `
-      <article class="feature-card" data-status="${esc(f.status)}">
-        <span class="badge badge-${esc(f.status)}">${esc(LABELS[f.status] || f.status)}</span>
-        <h3>${esc(f.title)}</h3>
-        <p>${esc(f.body)}</p>
-      </article>
-    `).join('');
-  }
-
-  function applyFilter(filter) {
-    const grid = $('#feature-grid');
-    const empty = $('#feature-empty');
-    if (!grid) return;
-
-    let visible = 0;
-    $$('.feature-card', grid).forEach((card) => {
-      const match = filter === 'all' || card.dataset.status === filter;
-      card.hidden = !match;
-      if (match) visible++;
-    });
-
-    if (empty) empty.hidden = visible > 0;
-  }
-
-  function init() {
-    render();
-
-    if (!$('[data-feature-filter]')) return;
-
-    $$('[data-feature-filter]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        $$('[data-feature-filter]').forEach((b) => b.classList.remove('is-active'));
-        btn.classList.add('is-active');
-        applyFilter(btn.dataset.featureFilter);
-      });
-    });
-  }
-
-  return { init };
-})();
-
-
-/* =========================================================================
-   10. FLOW
-   ========================================================================= */
-
-const Flow = (() => {
-  function render() {
-    const list = $('#flow');
-    if (!list) return;
-
-    list.innerHTML = FLOW.map((step) => `
-      <li class="flow-step reveal">
-        <h3>${esc(step.title)}</h3>
-        <p>${esc(step.body)}</p>
-      </li>
-    `).join('');
-  }
-
-  return { render };
-})();
-
-
-/* =========================================================================
-   11. PROBLEMS
-   ========================================================================= */
-
-const Problems = (() => {
-  function render() {
-    const grid = $('#problem-grid');
-    if (!grid) return;
-
-    grid.innerHTML = PROBLEMS.map((p) => `
-      <article class="problem-card reveal">
-        <div class="problem-head">
-          <span class="problem-icon" aria-hidden="true">${esc(p.icon)}</span>
-          <h3>${esc(p.problem)}</h3>
-        </div>
-        <div class="problem-row">
-          <span class="problem-tag">Common online pattern</span>
-          <span class="problem-text">${esc(p.current)}</span>
-        </div>
-        <div class="problem-row idea">
-          <span class="problem-tag">OFF idea</span>
-          <span class="problem-text">${esc(p.idea)}</span>
-        </div>
-      </article>
-    `).join('');
-  }
-
-  return { render };
-})();
-
-
-/* =========================================================================
-   12. IDEAS
-   ========================================================================= */
-
-const Ideas = (() => {
-  function render() {
-    const grid = $('#idea-grid');
-    if (!grid) return;
-
-    grid.innerHTML = IDEAS.map((idea) => `
-      <article class="idea-card reveal">
-        <h3>${esc(idea.title)}</h3>
-        <p>${esc(idea.body)}</p>
-      </article>
-    `).join('');
-  }
-
-  return { render };
-})();
-
-
-/* =========================================================================
-   13. CHANGELOG
+   12. CHANGELOG
    ========================================================================= */
 
 const Changelog = (() => {
@@ -1011,94 +836,105 @@ const Changelog = (() => {
   return { render };
 })();
 
-
 /* =========================================================================
-   14. ROADMAP + FILTERS
+   13. FORMS ('email me' + 'get involved')
    ========================================================================= */
 
-const Roadmap = (() => {
-  const LABELS = {
-    done: 'Done',
-    progress: 'In progress',
-    planned: 'Planned',
-    research: 'Research'
-  };
-
-  function phaseBadge(status) {
-    const cls = status === 'done' ? 'done'
-      : status === 'progress' ? 'progress'
-      : status === 'planned' ? 'planned'
-      : 'research';
-    return `<span class="badge badge-${cls}">${esc(LABELS[status] || status)}</span>`;
+const Forms = (() => {
+  function setStatus(el, message, isError) {
+    if (!el) return;
+    el.textContent = message;
+    el.classList.toggle('is-error', !!isError);
+    el.hidden = false;
   }
 
-  function render() {
-    const container = $('#roadmap-list');
-    if (!container) return;
-
-    container.innerHTML = ROADMAP.map((phase) => `
-      <article class="phase reveal" data-phase-status="${esc(phase.status)}">
-        <div class="phase-head">
-          <div>
-            <span class="phase-num">${esc(phase.phase)}</span>
-            <h3>${esc(phase.title)}</h3>
-          </div>
-          ${phaseBadge(phase.status)}
-        </div>
-        <ul class="phase-items">
-          ${phase.items.map((item) => `
-            <li class="phase-item" data-status="${esc(item.status)}">
-              <span class="phase-dot" aria-hidden="true"></span>
-              <span class="phase-item-text">
-                ${esc(item.text)}
-                <span class="phase-item-status">${esc(LABELS[item.status] || item.status)}</span>
-              </span>
-            </li>
-          `).join('')}
-        </ul>
-      </article>
-    `).join('');
+  function clearHint(el) {
+    if (el) el.textContent = '';
   }
 
-  function applyFilter(filter) {
-    const container = $('#roadmap-list');
-    const empty = $('#roadmap-empty');
-    if (!container) return;
+  function validate(form) {
+    let valid = true;
+    $$('input, select, textarea', form).forEach((field) => {
+      const hint = form.querySelector('#' + field.id + '-hint');
+      clearHint(hint);
+      field.classList.remove('is-error');
 
-    let visiblePhases = 0;
+      if (field.hasAttribute('required') && !field.value.trim()) {
+        setHint(hint, 'This is needed.');
+        field.classList.add('is-error');
+        valid = false;
+        return;
+      }
 
-    $$('.phase', container).forEach((phase) => {
-      let visibleItems = 0;
-
-      $$('.phase-item', phase).forEach((item) => {
-        const match = filter === 'all' || item.dataset.status === filter;
-        item.hidden = !match;
-        if (match) visibleItems++;
-      });
-
-      if (filter === 'all') {
-        phase.hidden = false;
-        visiblePhases++;
-      } else {
-        const show = visibleItems > 0;
-        phase.hidden = !show;
-        if (show) visiblePhases++;
+      if (field.type === 'email' && field.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
+        setHint(hint, 'That email doesn\u2019t look right.');
+        field.classList.add('is-error');
+        valid = false;
       }
     });
+    return valid;
+  }
 
-    if (empty) empty.hidden = visiblePhases > 0;
+  function setHint(el, msg) {
+    if (el) el.textContent = msg;
+  }
+
+  function flash(btn) {
+    if (!btn) return;
+    const original = btn.textContent;
+    btn.textContent = 'Sent ✓';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.disabled = false;
+    }, 2600);
+  }
+
+  async function submit(form, statusEl, btn) {
+    // Endpoint not configured yet — explain nicely.
+    if (!OFF_CONFIG.formEndpoint || OFF_CONFIG.formEndpoint.startsWith('[')) {
+      setStatus(statusEl, 'This form isn\u2019t connected yet — try the Instagram link meanwhile.', true);
+      return;
+    }
+
+    const data = {};
+    new FormData(form).forEach((value, key) => { data[key] = value; });
+
+    try {
+      const res = await fetch(OFF_CONFIG.formEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const json = await res.json();
+      if (json && json.success) {
+        setStatus(statusEl, 'Got it. Thank you — this actually helps.');
+        flash(btn);
+        form.reset();
+      } else {
+        setStatus(statusEl, json && json.message
+          ? 'The relay said: ' + json.message
+          : 'Something went wrong sending that. Please try again.', true);
+      }
+    } catch (e) {
+      setStatus(statusEl, 'Something went wrong sending that. Please try again.', true);
+    }
   }
 
   function init() {
-    render();
+    ['#form-message', '#form-getinvolved'].forEach((sel) => {
+      const form = $(sel);
+      if (!form) return;
 
-    if (!$('[data-roadmap-filter]')) return;
+      const statusEl = form.querySelector('.form-status');
+      const btn = form.querySelector('button[type="submit"]');
 
-    $$('[data-roadmap-filter]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        $$('[data-roadmap-filter]').forEach((b) => b.classList.remove('is-active'));
-        btn.classList.add('is-active');
-        applyFilter(btn.dataset.roadmapFilter);
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (validate(form)) {
+          submit(form, statusEl, btn);
+        }
       });
     });
   }
@@ -1106,9 +942,8 @@ const Roadmap = (() => {
   return { init };
 })();
 
-
 /* =========================================================================
-   15. FAQ
+   14. FAQ
    ========================================================================= */
 
 const Faq = (() => {
@@ -1118,7 +953,7 @@ const Faq = (() => {
 
     list.innerHTML = FAQS.map((item, i) => {
       const tag = item.tag
-        ? `<span class="faq-tag ${esc(item.tag)}">${item.tag === 'current' ? 'Current implementation' : 'Planned'}</span>`
+        ? `<span class="faq-tag ${esc(item.tag)}">${item.tag === 'current' ? 'Current' : 'Planned / intent'}</span>`
         : '';
 
       return `
@@ -1150,7 +985,6 @@ const Faq = (() => {
     const shouldOpen = typeof forceOpen === 'boolean'
       ? forceOpen
       : !item.classList.contains('open');
-
     item.classList.toggle('open', shouldOpen);
     trigger.setAttribute('aria-expanded', String(shouldOpen));
   }
@@ -1172,9 +1006,8 @@ const Faq = (() => {
   return { init };
 })();
 
-
 /* =========================================================================
-   16. DONATION / UPI
+   15. DONATION / UPI
    ========================================================================= */
 
 const Donation = (() => {
@@ -1184,7 +1017,7 @@ const Donation = (() => {
         await navigator.clipboard.writeText(text);
         return true;
       }
-    } catch (e) { /* fall through */ }
+    } catch (e) {}
 
     try {
       const ta = document.createElement('textarea');
@@ -1220,17 +1053,16 @@ const Donation = (() => {
       flashButton(btn, 'Copied ✓');
       Toast.show('UPI ID copied');
     } else {
-      Toast.show('Could not copy — please copy manually.');
+      Toast.show('Could not copy \u2014 please copy manually.');
     }
   }
 
-  /* Gracefully handle a missing QR image. */
   function guardQrImage(img) {
     if (!img) return;
     img.addEventListener('error', () => {
       const fallback = document.createElement('div');
       fallback.className = 'qr-fallback';
-      fallback.textContent = 'QR image not found — add off-upi-qr.jpg next to index.html';
+      fallback.textContent = 'QR image not found \u2014 add off-upi-qr.jpg next to index.html';
       img.replaceWith(fallback);
     }, { once: true });
   }
@@ -1263,9 +1095,8 @@ const Donation = (() => {
   return { init, copyText };
 })();
 
-
 /* =========================================================================
-   17. MODAL
+   16. MODAL
    ========================================================================= */
 
 const Modal = (() => {
@@ -1327,9 +1158,8 @@ const Modal = (() => {
   return { init, open, close };
 })();
 
-
 /* =========================================================================
-   18. TOAST
+   17. TOAST
    ========================================================================= */
 
 const Toast = (() => {
@@ -1355,9 +1185,8 @@ const Toast = (() => {
   return { show };
 })();
 
-
 /* =========================================================================
-   19. REVEAL ON SCROLL
+   18. REVEAL ON SCROLL
    ========================================================================= */
 
 const Reveal = (() => {
@@ -1394,9 +1223,8 @@ const Reveal = (() => {
   return { observeAll };
 })();
 
-
 /* =========================================================================
-   20. ACTIVE NAV + HEADER STATE
+   19. ACTIVE NAV + HEADER STATE
    ========================================================================= */
 
 const ActiveNav = (() => {
@@ -1453,9 +1281,8 @@ const ActiveNav = (() => {
   return { init };
 })();
 
-
 /* =========================================================================
-   21. BACK TO TOP
+   20. BACK TO TOP
    ========================================================================= */
 
 const BackToTop = (() => {
@@ -1489,9 +1316,8 @@ const BackToTop = (() => {
   return { init };
 })();
 
-
 /* =========================================================================
-   22. MISC
+   21. INIT
    ========================================================================= */
 
 function setYear() {
@@ -1499,41 +1325,19 @@ function setYear() {
   if (el) el.textContent = String(new Date().getFullYear());
 }
 
-function initAnchorSmoothing() {
-  document.addEventListener('click', (e) => {
-    const link = e.target.closest('a[href^="#"]');
-    if (!link) return;
-
-    const href = link.getAttribute('href');
-    if (!href || href === '#' || href.length < 2) return;
-
-    const target = document.getElementById(href.slice(1));
-    if (!target) return;
-
-    if (document.body.classList.contains('nav-open')) {
-      Nav.close();
-    }
-  });
-}
-
-
-/* =========================================================================
-   23. INIT
-   ========================================================================= */
-
 function init() {
   Theme.init();
 
   Links.init();
   Story.render();
-  Mindset.render();
+  Beliefs.render();
+  WorldFlow.render();
+  Follow.render();
+  StatusBoard.init();
+  Roadmap.render();
   Comparison.render();
-  Features.init();
-  Flow.render();
-  Problems.render();
-  Ideas.render();
   Changelog.render();
-  Roadmap.init();
+  Forms.init();
   Faq.init();
   Donation.init();
 
@@ -1543,8 +1347,6 @@ function init() {
   BackToTop.init();
 
   setYear();
-  initAnchorSmoothing();
-
   Reveal.observeAll();
 }
 
