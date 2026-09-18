@@ -1,5 +1,6 @@
-# Cloudflare Workers — static site deployment for OFF
-name = "off"
+# Cloudflare Workers — static site deployment for the OFF marketing site.
+# NOTE: intentionally a separate worker from the main OFF app ("off").
+name = "off-helper"
 compatibility_date = "2024-11-01"
 
 [assets]
